@@ -1,6 +1,8 @@
 import React from 'react';
 
+// MessageList component, received messages prop from parent component
 const MessageList = ({ messages }) => {
+  // Renders a list of messages that contains both the user's name and their message
   return (
     <div className="message-list">
       <h2>Chat Room</h2>
