@@ -6,7 +6,8 @@ const MessageForm = ({ addMessage }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addMessage({ text: message, user: user });
+    //addMessage({ text: message, user: user });
+    addMessage(message, user);
     setMessage('');
   };
   
