@@ -1,17 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const MessageForm = ({ addMessage }) => {
-  const [user, setUser] = useState('');
-  const [message, setMessage] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    //addMessage({ text: message, user: user });
-    addMessage(message, user);
-    setMessage('');
-  };
-  
-
+const MessageForm = ({ user, setUser, message, setMessage, handleSubmit }) => {
   return (
     <form className="message-form" onSubmit={handleSubmit}>
       <input
@@ -32,5 +21,6 @@ const MessageForm = ({ addMessage }) => {
 };
 
 export default MessageForm;
+
 
 

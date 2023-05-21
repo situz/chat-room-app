@@ -4,17 +4,33 @@ import MessageForm from './MessageForm';
 
 const ChatRoom = () => {
   const [messages, setMessages] = useState([]);
+  const [user, setUser] = useState('');
+  const [message, setMessage] = useState('');
 
-  const addMessage = (text, user) => {
-    const newMessage = { text, user };
+
+  const addMessage = () => {
+    const newMessage = { text: message, user: user };
     setMessages((prevMessages) => [...prevMessages, newMessage]);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addMessage();
+    setUser('');
+    setMessage('');
   };
   
 
   return (
     <div className="chat-room">
       <MessageList messages={messages} />
-      <MessageForm addMessage={addMessage} />
+      <MessageForm
+        user={user}
+        setUser={setUser}
+        message={message}
+        setMessage={setMessage}
+        handleSubmit={handleSubmit}
+      />
     </div>
   );
 };
