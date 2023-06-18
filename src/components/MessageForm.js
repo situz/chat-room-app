@@ -8,14 +8,14 @@ const MessageForm = ({ user, setUser, message, setMessage, handleSubmit }) => {
         type="text"
         placeholder="Your Name"
         value={user}
-        // Sets User state with event object's value
+        // Sets User state with event object's value when there is a change (i.e. name is typed)
         onChange={(e) => setUser(e.target.value)}
       />
       <input
         type="text"
         placeholder="Type your message..."
         value={message}
-        // Sets Message state with event object's value
+        // Sets Message state with event object's value when there is a change (i.e. message is typed)
         onChange={(e) => setMessage(e.target.value)}
       />
       <button type="submit">Send</button>
